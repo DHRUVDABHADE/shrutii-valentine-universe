@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine's Day Shruti ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0b0b1a, #000);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Stars */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.4); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      opacity: 0.7;
+      animation: floatUp 8s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.7; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 58px;
+      color: #ffb6c1;
+      text-shadow: 0 0 10px rgba(255, 182, 193, 0.9);
+      cursor: pointer;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 16px;
+      opacity: 0.85;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .btn {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 12px 28px;
+      background: rgba(255, 182, 193, 0.15);
+      border: 1px solid rgba(255, 182, 193, 0.7);
+      color: #ffb6c1;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: rgba(255, 182, 193, 0.35);
+      transform: scale(1.06);
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #ffd1dc;
+      text-shadow: 0 0 10px rgba(255, 182, 193, 0.35);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.08);
+      margin-bottom: 20px;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .timeline-item {
+      padding: 18px;
+      border-left: 4px solid rgba(255, 182, 193, 0.7);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+    }
+
+    .timeline-item span {
+      font-size: 13px;
+      color: #ffb6c1;
+      opacity: 0.9;
+    }
+
+    .timeline-item p {
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.92;
+    }
+
+    /* Reasons */
+    .reason-box {
+      text-align: center;
+    }
+
+    #reasonText, #memoryText {
+      margin-top: 18px;
+      font-size: 18px;
+      color: #fff;
+      opacity: 0.95;
+      min-height: 70px;
+      line-height: 1.7;
+      padding: 10px;
+    }
+
+    button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 15px;
+      background: rgba(255, 182, 193, 0.2);
+      color: #ffb6c1;
+      border: 1px solid rgba(255, 182, 193, 0.6);
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: rgba(255, 182, 193, 0.35);
+      transform: scale(1.05);
+    }
+
+    /* Polaroid Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .polaroid {
+      background: rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 0 18px rgba(255, 182, 193, 0.10);
+      text-align: center;
+    }
+
+    .polaroid img, .polaroid iframe {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 13px;
+      opacity: 0.85;
+      color: #ffd1dc;
+    }
+
+    /* Chat Section */
+    .chatbox {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .msg {
+      max-width: 75%;
+      padding: 12px 15px;
+      border-radius: 15px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .me {
+      align-self: flex-end;
+      background: rgba(255, 182, 193, 0.25);
+      border: 1px solid rgba(255, 182, 193, 0.4);
+    }
+
+    .her {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    /* Music button */
+    .music-btn {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 10;
+      background: rgba(255, 182, 193, 0.2);
+      border: 1px solid rgba(255, 182, 193, 0.6);
+      color: #ffb6c1;
+      padding: 10px 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .music-btn:hover {
+      background: rgba(255, 182, 193, 0.35);
+      transform: scale(1.05);
+    }
+
+    /* Popup secret letter */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 99;
+    }
+
+    .popup-content {
+      max-width: 700px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255, 182, 193, 0.25);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.15);
+    }
+
+    .popup-content h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+      color: #ffb6c1;
+      margin-bottom: 15px;
+    }
+
+    .popup-content p {
+      font-size: 15px;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+    }
+
+    /* Proposal Section */
+    .proposal-card {
+      border: 1px solid rgba(255, 182, 193, 0.5);
+      background: rgba(255, 182, 193, 0.08);
+      box-shadow: 0 0 40px rgba(255, 182, 193, 0.12);
+      text-align: center;
+    }
+
+    .proposal-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 46px;
+      color: #ffb6c1;
+      margin-bottom: 12px;
+      text-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+    }
+
+    .proposal-line {
+      font-size: 15px;
+      line-height: 1.9;
+      opacity: 0.95;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .proposal-video {
+      width: 100%;
+      max-width: 720px;
+      height: 400px;
+      margin-top: 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 182, 193, 0.35);
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.15);
+      border: none;
+    }
+
+    /* Heart burst animation */
+    .burst-heart {
+      position: fixed;
+      font-size: 22px;
+      pointer-events: none;
+      z-index: 999;
+      animation: burstMove 1.3s ease-out forwards;
+    }
+
+    @keyframes burstMove {
+      0% {
+        transform: translate(0,0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--x), var(--y)) scale(1.8);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    footer h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 44px;
+      color: #ffb6c1;
+      margin-bottom: 10px;
+    }
+
+    .ending-line {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.95;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #promiseResult {
+      margin-top: 15px;
+      font-size: 17px;
+      color: #ffb6c1;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/love.mp3" type="audio/mp3">
+  </audio>
+
+  <button class="music-btn" onclick="toggleMusic()">🎶 Play Music</button>
+
+  <!-- Stars -->
+  <div class="stars" id="stars"></div>
+
+  <header>
+    <h1 onclick="openSecret()">Happy Valentine's Day Shruti 🌙❤️</h1>
+    <p>
+      My love… you are not just a part of my life,  
+      you are the most beautiful universe I ever found. 🌙✨  
+      <br><br>
+      And in every lifetime… I would still choose you.
+      <br><br>
+      <span style="opacity:0.65; font-size:13px;">(Hint: click the title 🌙)</span>
+    </p>
+    <a class="btn" href="#story">Enter Our Story ✨</a>
+  </header>
+
+  <!-- Secret popup -->
+  <div class="popup" id="secretPopup">
+    <div class="popup-content">
+      <h3>My Secret Letter 💌</h3>
+      <p>
+        Shruti… if love had a face, it would look like you.  
+        <br><br>
+        You made my life feel softer, calmer, prettier…  
+        like even my bad days started waiting for your smile.  
+        <br><br>
+        I don’t know how you did it…  
+        but you became my habit, my peace, my home.  
+        <br><br>
+        And I swear… in every universe,  
+        I’d still fall for you the same way. 🌙💗
+      </p>
+      <button class="close-btn" onclick="closeSecret()">Close 💗</button>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <section id="story">
+    <h2>🌹 Our Love Story Timeline</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <span>24/08/2025</span>
+        <p>Kasarsai Dam… and that day we officially went out together for the first time 😭💗</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>14/09/2025</span>
+        <p>Our first movie together (Conjuring) 😚🎬  
+        Even horror felt romantic because you were with me.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>21/09/2025</span>
+        <p>Vetal Tekdi… the best time ever.  
+        Just me listening to you like you’re the prettiest story in the world 😌💗</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>Navratri 2025</span>
+        <p>For the first time ever, I kept a 9-day Navratri fast… just for you 🥺🙏  
+        Somewhere between prayers and moonlit nights… I fell in love with you a little more each day 🌙✨</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>23/09/2025</span>
+        <p>You made me a handmade evil eye keychain for my CBR key…  
+        and honestly, that gift is still my favourite 😭🧿💗</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>25/09/2025</span>
+        <p>You gave me flowers for the first time… and I still remember my heart smiling 💐💗</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>30/09/2025</span>
+        <p>Chaturshringi Devi darshan together… during my fast 🙏  
+        and you looked so stunning that day I couldn’t even look away 🥺✨</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>02/10/2025</span>
+        <p>You hugged me for the first time… and the world felt quiet for a moment 🫂💗</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>03/10/2025</span>
+        <p>We kissed for the first time… and I swear I still feel it in my soul 😭💋💗</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>04/10/2025</span>
+        <p>I received your jhumka as a keychain for my Interceptor’s key…  
+        and suddenly my bike felt like it carried your love too 🥺✨</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>20/10/2025</span>
+        <p>You had hardly 5 minutes… still you came in scorching sun and bought flowers for me 🥺🌞💐  
+        That day I realised… you don’t just love me, you SHOW it.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>22/10/2025</span>
+        <p>You got me a guardian bell ✨😌  
+        It felt like you were protecting my heart even when you weren’t near.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>28/10/2025</span>
+        <p>My birthday… and you made it the most magical day ever 🥺💗  
+        The embroidered shirt, chocolates, handmade card & box, letter full of feelings, cute bracelets, and my fav pink roses…  
+        everything was love in physical form 😭🌸✨</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROPOSAL SECTION -->
+  <section id="proposal">
+    <h2>💍 The Most Special Moment</h2>
+
+    <div class="card proposal-card">
+      <div class="proposal-title">The Pune Street Proposal 🌹</div>
+
+      <p class="proposal-line">
+        That day… on the busiest street of Pune…  
+        with people everywhere, noise everywhere…  
+        the world was moving fast…  
+        <br><br>
+        but my heart was standing still… because it only saw you. ❤️  
+        <br><br>
+        I went down on one knee… like a real proposal…  
+        and gave you a flower in public…  
+        because my feelings were too big to hide anymore. 🌹💍  
+        <br><br>
+        And the way you smiled that day…  
+        I swear… that smile became my favourite memory forever. 🌙✨
+      </p>
+
+      <iframe 
+        id="proposalVideo"
+        class="proposal-video"
+        src="https://drive.google.com/file/d/1vbW8AScLMBSbpbdK9VgsDvvUm_Z4_M58/preview"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+
+      <br>
+      <button onclick="playProposal()">Replay This Moment 💗</button>
+    </div>
+  </section>
+
+  <!-- Reasons -->
+  <section id="reasons">
+    <h2>💘 120+ Reasons Why I Love You</h2>
+
+    <div class="card" style="text-align:center;">
+      <p style="opacity:0.85; line-height:1.7;">
+        Shruti… click the button and let me remind you  
+        how deeply you are loved 🥺💗
+      </p>
+
+      <button onclick="generateReason()">Click for a reason 💞</button>
+      <div id="reasonText">✨ Waiting for your click, my love...</div>
+    </div>
+  </section>
+
+  <!-- Future plans -->
+  <section id="future">
+    <h2>💍 Our Future Plans</h2>
+
+    <div class="card">
+      <p style="font-size:15px; line-height:1.9; opacity:0.92;">
+        🌙 One day we’ll go on a long night drive together and I’ll hold your hand at every signal.<br>
+        🌸 One day we’ll click photos in every cute cafe and I’ll still say “you look prettier than the food.”<br>
+        🏍️ One day you’ll sit behind me and my bike won’t feel like a bike… it’ll feel like our story.<br>
+        🙏 One day we’ll go to temples again, and I’ll thank God for you every single time.<br>
+        🎬 One day we’ll watch movies and fight over popcorn like married couples.<br>
+        🏠 One day we’ll have our own home, our own little world, our own forever.<br>
+        💍 One day I’ll put a ring on your finger… and make it official that you’re mine forever.
+      </p>
+    </div>
+  </section>
+
+  <!-- Chat style -->
+  <section id="chat">
+    <h2>💬 Us (In Every Universe)</h2>
+
+    <div class="card chatbox">
+      <div class="msg me">Shruti… I miss you.</div>
+      <div class="msg her">I miss you more 😭💗</div>
+      <div class="msg me">Impossible. I literally breathe your name.</div>
+      <div class="msg her">Drama king 😂</div>
+      <div class="msg me">Only for my filmy queen 🎬👑</div>
+      <div class="msg her">Acha 😭❤️</div>
+      <div class="msg me">One day you’ll be my forever, and I’ll remind you daily.</div>
+      <div class="msg her">I already am 😌💗</div>
+      <div class="msg me">Then happy valentine’s day my love… my universe 🌙</div>
+    </div>
+  </section>
+
+  <!-- Memory Generator -->
+  <section id="memories">
+    <h2>🌹 Random Memory Of Us</h2>
+
+    <div class="card" style="text-align:center;">
+      <p style="opacity:0.85;">Click and let one of our moments hug you 💗</p>
+
+      <button onclick="generateMemory()">Click for a memory ✨</button>
+      <div id="memoryText">🌙 Waiting for your click...</div>
+    </div>
+  </section>
+
+  <!-- Guardian Bell -->
+  <section id="bell">
+    <h2>🛎️ The Guardian Bell</h2>
+
+    <div class="card">
+      <p style="font-size:15px; line-height:1.9; opacity:0.92;">
+        Shruti… that guardian bell you gave me isn’t just a gift.  
+        <br><br>
+        It feels like your love became protection.  
+        Like even when you’re not with me,  
+        a part of you is still guarding my life, my bike, my heart. 🥺💗  
+        <br><br>
+        Every time it moves… I feel like you’re saying,  
+        “I’m here. I’ve got you.” 🌙✨
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>📸 Our Photos & Videos</h2>
+
+    <div class="gallery-grid">
+
+      <!-- PHOTO SLOTS -->
+      <div class="polaroid">
+        <img src="assets/photo1.jpg" alt="Photo 1">
+        <div class="caption">my favourite view 💗</div>
+      </div>
+
+      <div class="polaroid">
+        <img src="assets/photo2.jpg" alt="Photo 2">
+        <div class="caption">us being us 🌙</div>
+      </div>
+
+      <div class="polaroid">
+        <img src="assets/photo3.jpg" alt="Photo 3">
+        <div class="caption">this smile owns me 😭❤️</div>
+      </div>
+
+      <div class="polaroid">
+        <img src="assets/photo4.jpg" alt="Photo 4">
+        <div class="caption">a memory forever ✨</div>
+      </div>
+
+      <div class="polaroid">
+        <img src="assets/photo5.jpg" alt="Photo 5">
+        <div class="caption">valentine’s magic 💞</div>
+      </div>
+
+      <!-- VIDEO SLOTS -->
+      <div class="polaroid">
+        <iframe src="https://drive.google.com/file/d/1UhjWwdJg26531xbNdc8rg4IZKbgy0hwR/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="caption">our little movie 🎬</div>
+      </div>
+
+      <div class="polaroid">
+        <iframe src="https://drive.google.com/file/d/1mD7xO0YUFJkIkXExod05nO54L-iKAZeD/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="caption">proof that love is real 💗</div>
+      </div>
+
+      <div class="polaroid">
+        <iframe src="https://drive.google.com/file/d/1lc7zmj0ii0VX-uBQXMFQzuZBcV0wBWE-/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="caption">my fav moments ✨</div>
+      </div>
+
+      <div class="polaroid">
+        <iframe src="https://drive.google.com/file/d/1f_nGlv-YJJ6eNPshhDIFSsXEdJVnDutK/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="caption">her laugh = heaven 😭</div>
+      </div>
+
+      <div class="polaroid">
+        <iframe src="https://drive.google.com/file/d/1GMn1SJYTV7VmZ5fh9CwaM-gzjUwN6z3x/preview" allow="autoplay" allowfullscreen></iframe>
+        <div class="caption">my universe captured 🌙</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:25px; text-align:center; opacity:0.8;">
+      <p>✨ Every photo is a memory… and every video is proof that our love is real 🌙💗</p>
+    </div>
+  </section>
+
+  <!-- Forever Promise -->
+  <section id="promise">
+    <h2>❤️ Forever Promise</h2>
+
+    <div class="card" style="text-align:center;">
+      <p style="font-size:15px; line-height:1.9; opacity:0.92;">
+        Shruti… I promise you one thing.
+        <br><br>
+        I’ll love you in every mood, every phase, every version of you.  
+        I’ll stay, I’ll fight, I’ll care… and I’ll choose you again and again.  
+        <br><br>
+        Not just today… but forever. 🌙💗
+      </p>
+
+      <button onclick="acceptPromise()">Click to accept my promise 💍</button>
+      <div id="promiseResult"></div>
+    </div>
+  </section>
+
+  <!-- Ending -->
+  <footer>
+    <h3>My Universe, My Shruti 🌙💗</h3>
+    <p class="ending-line">
+      In every universe… in every timeline… in every life…  
+      I would still find you. ✨  
+      <br>
+      And I would still choose you. ❤️  
+      <br><br>
+      Happy Valentine’s Day, my love.  
+      <br>
+      I’m yours… always. 🫶
+    </p>
+  </footer>
+
+  <script>
+    // Stars
+    const starsContainer = document.getElementById("stars");
+    for (let i = 0; i < 140; i++) {
+      let star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (Math.random() * 3 + 1) + "s";
+      starsContainer.appendChild(star);
+    }
+
+    // Floating Hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 6) + "s";
+      heart.style.fontSize = (Math.random() * 10 + 15) + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 900);
+
+    // Secret popup
+    function openSecret() {
+      document.getElementById("secretPopup").style.display = "flex";
+    }
+    function closeSecret() {
+      document.getElementById("secretPopup").style.display = "none";
+    }
+
+    // Music toggle
+    let playing = false;
+    function toggleMusic() {
+      const music = document.getElementById("bgMusic");
+      const btn = document.querySelector(".music-btn");
+
+      if (!playing) {
+        music.play();
+        btn.innerHTML = "⏸ Pause Music";
+        playing = true;
+      } else {
+        music.pause();
+        btn.innerHTML = "🎶 Play Music";
+        playing = false;
+      }
+    }
+
+    // Heart Explosion
+    function heartExplosion() {
+      for (let i = 0; i < 40; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("burst-heart");
+        heart.innerHTML = "💗";
+
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        heart.style.left = centerX + "px";
+        heart.style.top = centerY + "px";
+
+        const x = (Math.random() * 500 - 250) + "px";
+        const y = (Math.random() * 500 - 250) + "px";
+
+        heart.style.setProperty("--x", x);
+        heart.style.setProperty("--y", y);
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 1300);
+      }
+    }
+
+    // Proposal replay (iframe refresh trick)
+    function playProposal() {
+      const iframe = document.getElementById("proposalVideo");
+      const src = iframe.src;
+      iframe.src = "";
+      setTimeout(() => {
+        iframe.src = src;
+      }, 300);
+      heartExplosion();
+    }
+
+    // Reasons
+    const reasons = [
+      "Because you are my universe, Shruti 🌙✨",
+      "Because Kasarsai Dam became my favourite place because of you 💗",
+      "Because our first outing felt like destiny finally happening 😭",
+      "Because your smile fixes my mood instantly 🥺",
+      "Because our first movie together felt like a date from my dreams 😚🎬",
+      "Because even horror felt romantic when you were beside me 😭",
+      "Because Vetal Tekdi became special forever 😌💗",
+      "Because I love how you talk and I can listen forever 💗",
+      "Because your voice feels like comfort 🫶",
+      "Because you are filmy, dramatic, cute and perfect 🎬😭",
+      "Because I kept a 9-day Navratri fast just for you 🙏💗",
+      "Because you became my reason to believe in love again 😭",
+      "Because your evil eye keychain is my favourite gift 🧿",
+      "Because you gave me flowers and my heart melted 💐",
+      "Because Chaturshringi Devi darshan with you felt holy ✨🙏",
+      "Because you looked unreal that day 🥺✨",
+      "Because your first hug is still living in my heart 🫂💗",
+      "Because our first kiss felt like forever starting 💋😭",
+      "Because your jhumka keychain feels like you’re always with me 🥺",
+      "Because you came in scorching sun for 5 minutes just to give me flowers 🌞💐",
+      "Because you show love through effort, not just words 💗",
+      "Because your guardian bell feels like your protection 🛎️✨",
+      "Because you made my birthday magical beyond words 😭🌸",
+      "Because your handmade gifts were love in physical form 💌",
+      "Because your letters feel like hugs written in words 🥺",
+      "Because your bracelets feel like promises 💗",
+      "Because you gave me pink roses like you knew my soul 🌸",
+      "Because you make my world softer 😌",
+      "Because your eyes look like a universe 🌙",
+      "Because you are my favourite notification 💌",
+      "Because you make me believe in forever ❤️",
+      "Because you are my comfort girl 🫶",
+      "Because you are my favourite memory and my favourite dream ✨",
+      "Because your laugh is my favourite sound 😭",
+      "Because your hugs heal me 🫂",
+      "Because your kisses feel like promises 💋",
+      "Because you are my best decision ❤️",
+      "Because you make normal days special 🌸",
+      "Because you make me want to be better 💗",
+      "Because you make me feel chosen 😭",
+      "Because you never made me feel like I’m too much 🥺",
+      "Because you make me feel safe to be emotional 💗",
+      "Because you feel like my future 💍",
+      "Because you make my heart feel full ❤️",
+      "Because your love feels warm like a blanket 🥺",
+      "Because I smile randomly thinking about you 😭",
+      "Because your drama is my favourite entertainment 😂🎬",
+      "Because your anger is cute too 😭💗",
+      "Because you are the prettiest habit I ever got 😭",
+      "Because you are my moon in dark nights 🌙",
+      "Because you are my sunshine in tough days 🌞",
+      "Because you feel like destiny written for me ✨",
+      "Because you make me want to write poems ✍️",
+      "Because your love feels sacred 🙏",
+      "Because you make me feel lucky without trying 😭",
+      "Because you are the sweetest part of my life 💗",
+      "Because you make my heart calm 😌",
+      "Because you are my peace and my excitement both 🌙✨",
+      "Because I want to hold your hand forever 🫶",
+      "Because I want to celebrate every Valentine with you ❤️",
+      "Because I want to travel every place with you 🌍",
+      "Because I want to build a life with you 🏠💗",
+      "Because one day I want to put a ring on your finger 💍",
+      "Because you are not a chapter, you are my whole book 📖❤️",
+      "Because you are my forever person 😭",
+      "Because I’d choose you in every universe 🌙✨",
+      "Because you are Shruti… and that’s enough for forever 💗"
+    ];
+
+    while (reasons.length < 125) {
+      reasons.push("Because loving you feels like the best thing I ever did 💗");
+      reasons.push("Because you make my heart feel safe and alive at the same time 😭");
+      reasons.push("Because you are my favourite part of every day 🌙");
+    }
+
+    function generateReason() {
+      const randomIndex = Math.floor(Math.random() * reasons.length);
+      document.getElementById("reasonText").innerHTML = reasons[randomIndex];
+    }
+
+    // Memories
+    const memories = [
+      "Kasarsai Dam… our first official outing 😭💗",
+      "Watching Conjuring together and still feeling safe 😚🎬",
+      "Vetal Tekdi… just you, me and peace 😌",
+      "Navratri fast… and you being my reason 🙏💗",
+      "That evil eye keychain you made… my favourite gift 🧿",
+      "The first time you gave me flowers 💐😭",
+      "Chaturshringi Devi darshan together ✨🙏",
+      "Your first hug… and the world going quiet 🫂💗",
+      "Our first kiss… and my heart finally understanding love 💋😭",
+      "Your jhumka on my key… love hanging with my bike 🥺",
+      "That day you came in scorching sun for 5 minutes 🌞💐",
+      "Your guardian bell… protecting me even when you’re away 🛎️",
+      "My birthday… and your handmade gifts melting me 😭🌸",
+      "Pink roses… your love in flowers 🌸💗",
+      "The Pune street moment… when I went on one knee 🌹💍😭"
+    ];
+
+    function generateMemory() {
+      const randomIndex = Math.floor(Math.random() * memories.length);
+      document.getElementById("memoryText").innerHTML = memories[randomIndex];
+    }
+
+    // Promise button
+    function acceptPromise() {
+      document.getElementById("promiseResult").innerHTML =
+        "Now you’re officially stuck with me forever 😭💍❤️";
+      heartExplosion();
+    }
+  </script>
+
+</body>
+</html>
